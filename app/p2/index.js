@@ -30,13 +30,8 @@ const App = () => {
       <View key={data.id} style={styles.cardContainer}>
         <View style={styles.cardWrapper}>
           <Image style={styles.card} source={{ uri: data.imagemUrl }} />
-          <View
-            style={[
-              styles.cornerLabel,
-              { backgroundColor: data.cornerLabelColor },
-            ]}
-          >
-            <Text style={styles.cornerLabelText}>{data.cornerLabelText}</Text>
+          <View style={styles.cornerLabel}>
+            <Text style={styles.cornerLabelText}>Preço: {data.preco}</Text>
           </View>
         </View>
       </View>
@@ -74,13 +69,14 @@ const styles = StyleSheet.create({
   },
   card: {
     width: width * 0.9,
-    height: width * 0.5,
+    height: width * 1.5,
   },
   cornerLabel: {
     position: "absolute",
     bottom: 0,
     right: 0,
     borderTopLeftRadius: 8,
+    backgroundColor: "#2ECC40"
   },
   cornerLabelText: {
     fontSize: 12,
